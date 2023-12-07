@@ -1,0 +1,254 @@
+{
+	"info": {
+		"_postman_id": "54c69e3b-7c71-4055-95c0-9cfe4775d711",
+		"name": "palitra_task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "24527473"
+	},
+	"item": [
+		{
+			"name": "blog.index",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/v1/blogs",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"blogs"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "2",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "blog.store",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "testing 2",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "testing description",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/KeiNa/Desktop/403635983_284226241269825_3876104839570193194_n.jpg"
+						}
+					]
+				},
+				"url": "{{base_url}}/api/v1/blog/store"
+			},
+			"response": []
+		},
+		{
+			"name": "blog.attach.tag",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": "{{base_url}}/api/v1/blog/3/attach/tag/1"
+			},
+			"response": []
+		},
+		{
+			"name": "blog.detach.tag",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/v1/blog/3/detach/tag/2?Accept=application/json",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"blog",
+						"3",
+						"detach",
+						"tag",
+						"2"
+					],
+					"query": [
+						{
+							"key": "Accept",
+							"value": "application/json"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "tag.index",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": "{{base_url}}/api/v1/tags"
+			},
+			"response": []
+		},
+		{
+			"name": "tag.store",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "testing tag 3",
+							"type": "text"
+						}
+					]
+				},
+				"url": "{{base_url}}/api/v1/tag/store"
+			},
+			"response": []
+		},
+		{
+			"name": "user.login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/login?Accept=application/json",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"login"
+					],
+					"query": [
+						{
+							"key": "Accept",
+							"value": "application/json"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user.register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": "{{base_url}}/api/register"
+			},
+			"response": []
+		},
+		{
+			"name": "user.logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "4|CMMrgKdmB1sj3CEqiS3X9kiNPZZzgEb4f1MVbmBh1f6c8f6c"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": "{{base_url}}/api/logout"
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": {
+			"token": "2|eMaa2iRuksMemHpyPL02hKIx9tYGL8i9WHVsSp0Ee202524a"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8000",
+			"type": "string"
+		}
+	]
+}
